@@ -91,3 +91,4 @@ This backend is designed to be deployed to Render or Vercel. Follow these steps:
 4. Set the output directory to `dist`
 5. Add your environment variables in the Vercel dashboard
 # gdggug-backend
+# gdggug-backend
