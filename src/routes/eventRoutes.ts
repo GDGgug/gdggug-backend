@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import express from 'express';
 import {
   getAllEvents,
   getEventById,
@@ -7,7 +7,7 @@ import {
   deleteEvent
 } from '../controllers/eventController';
 
-const router = Router();
+const router = express.Router();
 
 // GET /api/events - Get all events
 router.get('/', getAllEvents);

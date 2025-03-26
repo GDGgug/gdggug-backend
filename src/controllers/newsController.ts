@@ -1,4 +1,6 @@
-import { Request, Response } from 'express';
+import express from 'express';
+type Request = express.Request;
+type Response = express.Response;
 import { News } from '../models';
 
 // Get all news items

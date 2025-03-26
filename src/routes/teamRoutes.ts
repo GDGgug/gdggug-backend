@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import express from 'express';
 import {
   getAllTeamMembers,
   getTeamMemberById,
@@ -7,7 +7,7 @@ import {
   deleteTeamMember
 } from '../controllers/teamController';
 
-const router = Router();
+const router = express.Router();
 
 // GET /api/team - Get all team members
 router.get('/', getAllTeamMembers);

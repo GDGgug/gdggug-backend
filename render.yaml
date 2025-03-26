@@ -3,7 +3,7 @@ services:
     name: gdggug-backend
     env: node
     buildCommand: npm install && npm run build
-    startCommand: npm start
+    startCommand: node dist/server.js
     envVars:
       - key: NODE_ENV
         value: production

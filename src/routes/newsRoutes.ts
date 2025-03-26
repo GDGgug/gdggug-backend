@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import express from 'express';
 import {
   getAllNews,
   getNewsById,
@@ -7,7 +7,7 @@ import {
   deleteNews
 } from '../controllers/newsController';
 
-const router = Router();
+const router = express.Router();
 
 // GET /api/news - Get all news items
 router.get('/', getAllNews);
