@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { connectToDatabase } from './config/db';
 import eventRoutes from './routes/eventRoutes';
-import newsRoutes from './routes/newsRoutes';
+import newsRoutes from './routes/news';
 import teamRoutes from './routes/teamRoutes';
 
 // Load environment variables from .env file
