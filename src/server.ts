@@ -20,14 +20,25 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
+// Add CORS headers to all responses
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  next();
+});
+
 // CORS configuration
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://gdg-gug.vercel.app', 'https://gdg-gug-website.onrender.com', 'https://www.gdggug.com', 'https://gdggug.com', 'http://localhost:5173'] 
-    : ['http://localhost:5173', 'http://localhost:3001'],
+  origin: '*',  // Allow all origins
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
+  credentials: false  // Changed to false since we're allowing all origins
 }));
 
 app.use(express.json());
