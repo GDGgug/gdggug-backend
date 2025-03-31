@@ -23,7 +23,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 // CORS configuration
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://gdg-gug.vercel.app', 'https://gdg-gug-website.onrender.com', 'http://localhost:5173'] 
+    ? ['https://gdg-gug.vercel.app', 'https://gdg-gug-website.onrender.com', 'https://www.gdggug.com', 'https://gdggug.com', 'http://localhost:5173'] 
     : ['http://localhost:5173', 'http://localhost:3001'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
