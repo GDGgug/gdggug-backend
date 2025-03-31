@@ -22,9 +22,9 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 // Add CORS headers to all responses
 app.use((req: Request, res: Response, next: NextFunction) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', '*');
-  res.header('Access-Control-Allow-Headers', '*');
+  res.header('Access-Control-Allow-Origin', 'https://www.gdggug.com');
+  res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Origin, X-Requested-With, Accept');
   res.header('Access-Control-Allow-Credentials', 'true');
   
   // Handle preflight requests
@@ -36,9 +36,9 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 // Use CORS middleware with the same configuration
 app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-  allowedHeaders: '*',
+  origin: 'https://www.gdggug.com',
+  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'X-Requested-With', 'Accept'],
   credentials: true
 }));
 
