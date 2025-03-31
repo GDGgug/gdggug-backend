@@ -8,7 +8,7 @@ const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const db_1 = require("./config/db");
 const eventRoutes_1 = __importDefault(require("./routes/eventRoutes"));
-const news_1 = __importDefault(require("./routes/news"));
+const newsRoutes_1 = __importDefault(require("./routes/newsRoutes"));
 const teamRoutes_1 = __importDefault(require("./routes/teamRoutes"));
 // Load environment variables from .env file
 dotenv_1.default.config();
@@ -35,7 +35,7 @@ app.use(express.json());
     console.log('Connected to MongoDB successfully');
     // API Routes
     app.use('/api/events', eventRoutes_1.default);
-    app.use('/api/news', news_1.default);
+    app.use('/api/news', newsRoutes_1.default);
     app.use('/api/team', teamRoutes_1.default);
     // Health check endpoint
     app.get('/api/health', (req, res) => {

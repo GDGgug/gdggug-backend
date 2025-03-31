@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import { connectToDatabase } from './config/db';
 import eventRoutes from './routes/eventRoutes';
-import newsRoutes from './routes/news';
+import newsRoutes from './routes/newsRoutes';
 import teamRoutes from './routes/teamRoutes';
 
 // Load environment variables from .env file
