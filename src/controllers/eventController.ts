@@ -1,6 +1,5 @@
 import express from 'express';
-type Request = express.Request;
-type Response = express.Response;
+import { Request, Response } from '../types';
 import { Event } from '../models';
 
 // Get all events

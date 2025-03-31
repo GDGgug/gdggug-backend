@@ -1,5 +1,8 @@
-import { Request, Response } from 'express';
-import { News } from '../models/news';
+import express from 'express';
+import { News } from '../models';
+
+type Request = any;
+type Response = any;
 
 // Get all news items
 export const getAllNews = async (req: Request, res: Response) => {

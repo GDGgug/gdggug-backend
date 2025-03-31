@@ -1,6 +1,5 @@
 import express from 'express';
-type Request = express.Request;
-type Response = express.Response;
+import { Request, Response } from '../types';
 import { TeamMember } from '../models';
 
 // Get all team members

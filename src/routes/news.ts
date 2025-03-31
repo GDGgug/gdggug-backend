@@ -1,4 +1,5 @@
-import express from 'express';
+const express = require('express');
+import { Request, Response } from '../types';
 import { getAllNews, createNews, updateNews, deleteNews } from '../controllers/news';
 
 const router = express.Router();

@@ -3,16 +3,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
+const express = require('express');
 const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const db_1 = require("./config/db");
 const eventRoutes_1 = __importDefault(require("./routes/eventRoutes"));
-const newsRoutes_1 = __importDefault(require("./routes/newsRoutes"));
+const news_1 = __importDefault(require("./routes/news"));
 const teamRoutes_1 = __importDefault(require("./routes/teamRoutes"));
 // Load environment variables from .env file
 dotenv_1.default.config();
-const app = (0, express_1.default)();
+const app = express();
 const port = process.env.PORT || 3001;
 // Enhanced logging middleware
 app.use((req, res, next) => {
@@ -28,14 +28,14 @@ app.use((0, cors_1.default)({
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }));
-app.use(express_1.default.json());
+app.use(express.json());
 // Connect to MongoDB
 (0, db_1.connectToDatabase)()
     .then(() => {
     console.log('Connected to MongoDB successfully');
     // API Routes
     app.use('/api/events', eventRoutes_1.default);
-    app.use('/api/news', newsRoutes_1.default);
+    app.use('/api/news', news_1.default);
     app.use('/api/team', teamRoutes_1.default);
     // Health check endpoint
     app.get('/api/health', (req, res) => {

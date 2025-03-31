@@ -1,5 +1,7 @@
-import express from 'express';
+const express = require('express');
+import { Request, Response, NextFunction } from './types';
 import cors from 'cors';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import { connectToDatabase } from './config/db';
 import eventRoutes from './routes/eventRoutes';
@@ -13,7 +15,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // Enhanced logging middleware
-app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((req: Request, res: Response, next: NextFunction) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   next();
 });
@@ -41,7 +43,7 @@ connectToDatabase()
     app.use('/api/team', teamRoutes);
 
     // Health check endpoint
-    app.get('/api/health', (req: express.Request, res: express.Response) => {
+    app.get('/api/health', (req: Request, res: Response) => {
       res.json({ status: 'ok', timestamp: new Date().toISOString() });
     });
 
