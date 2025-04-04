@@ -4,8 +4,8 @@ export interface IEvent extends Document {
   title: string;
   description: string;
   date: Date;
-  time: string;
-  location: string;
+  time?: string;
+  location?: string;
   image?: string;
   status: 'upcoming' | 'past' | 'canceled';
   registrationLink?: string;
@@ -30,11 +30,11 @@ const eventSchema = new Schema<IEvent>(
     },
     time: {
       type: String,
-      required: [true, 'Please provide an event time'],
+      required: false,
     },
     location: {
       type: String,
-      required: [true, 'Please provide an event location'],
+      required: false,
     },
     image: {
       type: String,
