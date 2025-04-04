@@ -19,7 +19,10 @@ const allowedOrigins = [
   'https://www.gdggug.com',
   'https://gdggug.com',
   'http://localhost:3000',
-  'http://localhost:3001'
+  'http://localhost:3001',
+  'http://69.62.107.249:3000',
+  'http://69.62.107.249:4173',
+  'http://69.62.107.249:3001'
 ];
 
 // CORS configuration
