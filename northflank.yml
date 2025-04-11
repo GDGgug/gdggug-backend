@@ -1,0 +1,22 @@
+version: 1
+name: gdggug-backend
+type: service
+build:
+  dockerfile: Dockerfile
+  context: .
+deploy:
+  replicas: 1
+  resources:
+    cpu: 200m
+    memory: 512Mi
+  env:
+    - name: MONGODB_URI
+      value: ${MONGODB_URI}
+    - name: JWT_SECRET
+      value: ${JWT_SECRET}
+    - name: NODE_ENV
+      value: production
+  ports:
+    - port: 3001
+      protocol: http
+      public: true 
